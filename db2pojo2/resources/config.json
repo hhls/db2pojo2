@@ -1,0 +1,75 @@
+{
+	"project" 			: "yuxin.wx",
+	
+	"author" 			: "chopin",
+	
+	"group"				: "classes",
+	
+	"dbConfig" : {
+		"driverClass" 	: "org.gjt.mm.mysql.Driver",
+		"username" 		: "root",
+		"password" 		: "123456",
+		"url" 			: "jdbc:mysql:\/\/localhost:3306/yunduo_test?useUnicode=true&amp;characterEncoding=UTF-8"
+	}, 
+	
+	"ignorePrefix" : "t_",
+	
+	"groups" : [{
+			"name" 	 : "course",
+			"prefix" : "course"
+		}, {
+			"name" 	 : "system",
+			"prefix" : "sys"
+		}, {
+			"name" 	 : "student",
+			"prefix" : "student"
+	}, {
+			"name" 	 : "classes",
+			"prefix" : "class"
+	},{
+			"name"   : "auth",
+			"prefix" : "auth"
+	},{
+			"name"   : "pay",
+			"prefix" : "pay"
+	},{
+			"name"   : "user",
+			"prefix" : "user"
+	},{
+			"name"   : "commondity",
+			"prefix" : "commondity"
+	},{
+			"name"   : "company",
+			"prefix" : "company"
+	}
+	],
+	
+	"templateDir" : "resources/template/ssm3/",
+	
+	"mappings" : [{
+			"template"	:	"pojo.ftl",
+			"dir"		:	"com/${project}/model/${model}"
+		},{
+			"template"	:	"controller.ftl",
+			"dir"		:	"com/${project}/controller/${model}",
+			"rpadding"	:	"Controller"
+		}, {
+			"template"	:	"service_impl.ftl",
+			"dir"		:	"com/${project}/${model}/impl",
+			"rpadding"	:	"ServiceImpl"
+		}, {
+			"template"	:	"service_spi.ftl",
+			"dir"		:	"com/${project}/api/${model}",
+			"lpadding"	:	"I",
+			"rpadding"	:	"Service"
+		}, {
+			"template"	:	"mybatis_xml.ftl",
+			"dir"		:	"com/${project}/${model}/xml",
+			"rpadding"	:	"Mapper",
+			"suffix"	:	"xml"
+		}, {
+			"template"	:	"mapper.ftl",
+			"dir"		:	"com/${project}/${model}/mapper",
+			"rpadding"	:	"Mapper"
+		}]
+}
